@@ -1,0 +1,17 @@
+[
+    {
+        "title": "The Art of Separation of Concerns",
+        "content": "In software engineering, Separation of Concerns refers to the delineation and correlation of software elements to achieve order within a system. Through proper separation of concerns, complexity becomes manageable.",
+        "user_id": 1
+    },
+    {
+        "title": "What is an Architectural Pattern?",
+        "content": "An architectural pattern is a general, reusable solution to a commonly occurring problem in software architecture within a given context. Architectural patterns are similar to software design pattern but have a broader scope.",
+        "user_id": 2
+    },
+    {
+        "title": "What Are JavaScript Templates?",
+        "content": "JavaScript templates are a method of separating HTML structure from the content contained within. Templating systems generally introduce some new syntax but are usually very simple to work with, especially if we’ve used templating systems elsewhere previously (eg. Twig in PHP). A fun point to note is that token replacement is usually symbolized by double curly brackets ({{ ... }}), which Mustache and Handlebars derive their names from (hint: turn them sideways to see the similarity).",
+        "user_id": 3
+    }
+]

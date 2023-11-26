@@ -1,0 +1,17 @@
+[
+    {
+        "content": "Took my sometime to get my head around this.",
+        "user_id": 2,
+        "post_id": 1
+    },
+    {
+        "content": "Are there any other popular architectural patterns that you've used?",
+        "user_id": 3,
+        "post_id": 2
+    },
+    {
+        "content": "Interesting to know.",
+        "user_id": 1,
+        "post_id": 3
+    }
+]
