@@ -1,0 +1,85 @@
+:root {
+  /* declare a variable with `--` syntax */
+  --bs-secondary-color: #13293d;
+
+}
+
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #d6d6d6;
+}
+
+header {
+  background-color: #1a2dc3;
+  color: #ffffff;
+}
+
+nav {
+  background-color: #444;
+}
+
+.nav-link{
+  color: #fff;
+}
+
+.post {
+  background-color: #ffffff;
+  border: 5px solid #000000;
+  border-radius: 4px;
+} 
+.post-title{
+  background-color: #333333;
+  color:#ffffff
+} 
+.post-title a {
+  color:#ffffff;
+  text-decoration: none;
+} 
+
+
+/* form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}  */
+
+/* button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+} */
