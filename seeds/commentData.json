@@ -1,7 +1,12 @@
 [
     {
-        "content": "Took my sometime to get my head around this.",
+        "content": "Took me sometime to get my head around this.",
         "user_id": 2,
+        "post_id": 1
+    },
+    {
+        "content": "It is a complicated topic indeed.",
+        "user_id": 3,
         "post_id": 1
     },
     {

@@ -3,7 +3,7 @@
         <div class='post'>
             <div class='d-flex justify-content-between post-title p-2'>
                 <h3><a href='/post/{{post.id}}'>{{post.title}}</a></h3>
-                <p>Posted by  on {{post.date_created}}</p>
+                <p>Posted by on {{post.date_created}}</p>
             </div>
             <p class='p-2'>{{post.content}}</p>
         </div>
@@ -11,23 +11,37 @@
 </div>
 
 <!-- Add Comments to Existing Blog Posts -->
-<div class='comments'>
-    <h2>Comments</h2>
-    <!-- Add form fields for comments -->
-    <!-- Example: -->
-    {{#if logged_in}}
-        <form>
-            <label for='comment'>Comment:</label>
-            <textarea id='comment' name='comment'></textarea>
-            <button type='submit'>Add Comment</button>
-        </form>
-    {{/if}}
-    <!-- Display existing comments -->
-    {{#each comments as |comment| }}
-    <div class='comment'>
-        <p>{{comment.content}}</p>
-        <p>--{{user.name}}, {{comment.date_created}}</p>
+<div class='row d-flex mt-3 justify-content-center'>
+    <div class='col-10'>
+        <div class='comment'>
+        <h2 class='comment-title p-2 mb-0'>Comments</h2>
+        <!-- Display existing comments -->
+        {{#each comments as |comment|}}
+            <div class='p-2'>
+                <p>{{comment.content}}</p>
+                <p class='text-end border-bottom'>
+                    --{{user.name}},
+                    {{comment.date_created}}</p>
+            </div>
+        {{/each}}
     </div>
-{{/each}}
+</div>
+<div class='row d-flex mt-3 justify-content-center'>
+    <div class='col-8'>
+        <h3 class='mt-3 add-comment'>Add Comment</h3>
+        {{#if logged_in}}
+            <form class='form add-comment-form'>
+                <label class='form-label' for='comment'>Enter your comment below:</label>
+                <textarea
+                    class='form-control'
+                    id='comment'
+                    name='comment'
+                ></textarea>
+                <button class='btn btn-primary mt-3' type='submit'>Add Comment</button>
+            </form>
+        {{else}}
+            <p><a href='/login'>Login</a> to add your comment</p>
+        {{/if}}
 
+    </div>
 </div>

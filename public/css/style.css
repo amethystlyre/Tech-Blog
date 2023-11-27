@@ -25,12 +25,17 @@ nav {
   color: #fff;
 }
 
-.post {
+p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.post, .comment , .login, .new-post, .update-post{
   background-color: #ffffff;
   border: 5px solid #000000;
   border-radius: 4px;
 } 
-.post-title{
+.post-title, .comment-title, .login-title{
   background-color: #333333;
   color:#ffffff
 } 
@@ -59,27 +64,21 @@ textarea {
   box-sizing: border-box;
 }  */
 
-/* button {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
+.comments, .add-comment {
+  color:#1a2dc3;
+}
+
+.post-list-item{
+  background-color: #1a2dc3;
+  color: #ffffff;
   border-radius: 4px;
-  cursor: pointer;
 }
 
-button:hover {
-  background-color: #555;
-}
+.new-post, .update-post{
+  display: none;
+} 
 
-.comments {
-  margin-top: 20px;
-}
-
-.comment {
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-} */
+.post-list-item a {
+  color:#ffffff;
+  text-decoration: none;
+} 
