@@ -36,7 +36,7 @@ document
     .querySelector('.new-post-form')
     .addEventListener('submit', newPostFormHandler);
 
-const updatePostButtonHandler = async (event) => {
+const postClickHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const updatePostForm = document.querySelector('.update-post');
         updatePostForm.style.display = 'block';
@@ -49,35 +49,43 @@ const updatePostButtonHandler = async (event) => {
         if (response.ok) {
             let data = await response.json();
             console.log(data);
-            document.querySelector('#update-post-title').value=data.title;
-            document.querySelector('#update-post-content').value=data.content;
+            document.querySelector('#update-post-title').value = data.title;
+            document.querySelector('#update-post-content').value = data.content;
+            document
+                .querySelector('#update-post-btn')
+                .setAttribute('data-id', id);
         } else {
             alert('Failed to get details');
         }
-        
     }
 };
 
 document
     .querySelector('#post-list')
-    .addEventListener('click', updatePostButtonHandler);
+    .addEventListener('click', postClickHandler);
 
 const updatePostFormHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
+    const id = event.target.dataset.id;
+    console.log(id);
+    const title = document.querySelector('#update-post-title').value;
+    const content = document.querySelector('#update-post-content').value;
 
-        const response = await fetch(`/api/projects/${id}`, {
-            method: 'PUT',
-            body: JSON.stringify({ name, needed_funding, description }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+    const response = await fetch(`/api/posts/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({ title, content }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
 
-        if (response.ok) {
-            document.location.replace('/profile');
-        } else {
-            alert('Failed to delete project');
-        }
+    if (response.ok) {
+        document.location.replace('/dashboard');
+        alert('Post has been updated');
+    } else {
+        alert('Failed to update post');
     }
 };
+
+document
+    .querySelector('#update-post-btn')
+    .addEventListener('click', updatePostFormHandler);

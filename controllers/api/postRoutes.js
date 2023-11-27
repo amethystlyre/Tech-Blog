@@ -6,8 +6,7 @@ router.get('/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id);
 
-        const post = postData.get({ plain: true })
-
+        const post = postData.get({ plain: true });
 
         res.status(200).json(post);
     } catch (err) {
@@ -29,25 +28,29 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-
 router.put('/:id', withAuth, async (req, res) => {
-
     try {
-      const postData = await Post.update(req.body, {
-        where: {
-            user_id: req.session.user_id,
-        }
-      });
-  
-      if (!postData) {
-        res.status(404).json({ "message": "No post with this id!" })
-      } else {
-        res.json(postData);
-      }
-    }
-    catch { (err) => res.status(500).json(err) }
-  
-  });
+        //console.log(req.body);
+        const postData = await Post.update(
+            {
+                title: req.body.title,
+                content: req.body.content,
+            },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        );
 
+        if (!postData) {
+            res.status(404).json({ message: 'No post with this id!' });
+        } else {
+            res.json(postData);
+        }
+    } catch {
+        (err) => res.status(500).json(err);
+    }
+});
 
 module.exports = router;
