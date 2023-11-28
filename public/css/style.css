@@ -1,5 +1,4 @@
 :root {
-    /* declare a variable with `--` syntax */
     --primary-theme-color: rgb(86, 48, 202);
     --secondary-theme-color: rgb(80, 78, 80);
     --text-light-color: rgb(255, 255, 255);
