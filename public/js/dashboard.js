@@ -36,7 +36,7 @@ document
     .querySelector('.new-post-form')
     .addEventListener('submit', newPostFormHandler);
 
-const postClickHandler = async (event) => {
+const editPostHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const updatePostForm = document.querySelector('.update-post');
         updatePostForm.style.display = 'block';
@@ -54,15 +54,16 @@ const postClickHandler = async (event) => {
             document
                 .querySelector('#update-post-btn')
                 .setAttribute('data-id', id);
+            document
+                .querySelector('#del-post-btn')
+                .setAttribute('data-id', id);
         } else {
             alert('Failed to get details');
         }
     }
 };
 
-document
-    .querySelector('#post-list')
-    .addEventListener('click', postClickHandler);
+document.querySelector('#post-list').addEventListener('click', editPostHandler);
 
 const updatePostFormHandler = async (event) => {
     const id = event.target.dataset.id;
@@ -89,3 +90,23 @@ const updatePostFormHandler = async (event) => {
 document
     .querySelector('#update-post-btn')
     .addEventListener('click', updatePostFormHandler);
+
+const deletePostFormHandler = async (event) => {
+    const id = event.target.dataset.id;
+    console.log(id);
+
+    const response = await fetch(`/api/posts/${id}`, {
+        method: 'Delete',
+    });
+
+    if (response.ok) {
+        document.location.replace('/dashboard');
+        alert('Post has been deleted');
+    } else {
+        alert('Failed to delete post');
+    }
+};
+
+document
+    .querySelector('#del-post-btn')
+    .addEventListener('click', deletePostFormHandler);
