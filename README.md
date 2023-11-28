@@ -17,7 +17,7 @@
     
 ## Installation
     
-Open url link https://note-taker-app-05-11-23-736e39b907ab.herokuapp.com/ in a browser such as Google Chrome, Firefox or Edge etc.
+Open url link https://tech-blog-site-2023-38e4d227d305.herokuapp.com/ in a browser such as Google Chrome, Firefox or Edge etc.
 
 ## Usage
 
