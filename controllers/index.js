@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+//router directions for frontend and backend api
 const apiRoutes = require('./api');
 const homeRoutes = require('./homeRoutes');
 

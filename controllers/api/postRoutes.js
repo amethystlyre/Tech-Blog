@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+//get post details for individual users
 router.get('/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id);
@@ -15,6 +16,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+//create new post from user dashboard
 router.post('/', withAuth, async (req, res) => {
     try {
         const newPost = await Post.create({
@@ -28,6 +30,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
+//update post from user dashboard
 router.put('/:id', withAuth, async (req, res) => {
     try {
         //console.log(req.body);
@@ -53,6 +56,7 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 });
 
+//delete post from user dashboard
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.destroy({

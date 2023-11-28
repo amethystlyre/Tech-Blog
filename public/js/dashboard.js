@@ -1,3 +1,4 @@
+//New Post Button to make create post form appear on screen
 const newPostButtonHandler = async (event) => {
     event.preventDefault();
 
@@ -9,6 +10,7 @@ document
     .querySelector('#new-post-btn')
     .addEventListener('click', newPostButtonHandler);
 
+//Handles form submission for creating new post in DB
 const newPostFormHandler = async (event) => {
     event.preventDefault();
 
@@ -36,6 +38,7 @@ document
     .querySelector('.new-post-form')
     .addEventListener('submit', newPostFormHandler);
 
+//Clicking on post title opens a form to edit existing post details
 const editPostHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const updatePostForm = document.querySelector('.update-post');
@@ -54,9 +57,7 @@ const editPostHandler = async (event) => {
             document
                 .querySelector('#update-post-btn')
                 .setAttribute('data-id', id);
-            document
-                .querySelector('#del-post-btn')
-                .setAttribute('data-id', id);
+            document.querySelector('#del-post-btn').setAttribute('data-id', id);
         } else {
             alert('Failed to get details');
         }
@@ -65,6 +66,7 @@ const editPostHandler = async (event) => {
 
 document.querySelector('#post-list').addEventListener('click', editPostHandler);
 
+//Handles form submission when user updates existing post
 const updatePostFormHandler = async (event) => {
     const id = event.target.dataset.id;
     console.log(id);
@@ -91,6 +93,7 @@ document
     .querySelector('#update-post-btn')
     .addEventListener('click', updatePostFormHandler);
 
+//Handles form submission when user deletes existing post
 const deletePostFormHandler = async (event) => {
     const id = event.target.dataset.id;
     console.log(id);

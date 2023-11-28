@@ -1,10 +1,11 @@
+//Handles new user signing up form submission
 const signUpHandler = async (event) => {
     event.preventDefault();
 
     const name = document.querySelector('#signup-username').value.trim();
     const email = document.querySelector('#signup-email').value.trim();
     const password = document.querySelector('#signup-password').value.trim();
-    console.log(name, email , password);
+    console.log(name, email, password);
 
     if (name && email && password) {
         const response = await fetch('/api/users', {

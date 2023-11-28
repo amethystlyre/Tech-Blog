@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+//Get all posts (for display on home page)
 router.get('/', async (req, res) => {
     try {
         // Get all projects and JOIN with user data
@@ -25,6 +26,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+//Get individual posts with comments (for display on home page)
 router.get('/post/:id', async (req, res) => {
     try {
         const commentData = await Comment.findAll({
@@ -65,6 +67,7 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
+//Renders login page
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -74,6 +77,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+//Renders dashboard page after login
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const postData = await Post.findAll({
@@ -94,6 +98,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
+
+//Renders sign up page for new users
 router.get('/signup', async (req, res) => {
     res.render('signup');
 });

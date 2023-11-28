@@ -1,3 +1,4 @@
+//Handles login form submission
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
