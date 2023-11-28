@@ -85,6 +85,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
         res.render('dashboard', {
             posts,
             logged_in: req.session.logged_in,
+            title: "Your Dashboard",
         });
         //console.log(user);
     } catch (err) {

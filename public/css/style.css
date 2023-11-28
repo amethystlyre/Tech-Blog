@@ -1,9 +1,9 @@
 :root {
     /* declare a variable with `--` syntax */
-    --primary-theme-color: rgb(118, 128, 201);
+    --primary-theme-color: rgb(86, 48, 202);
     --secondary-theme-color: rgb(80, 78, 80);
     --text-light-color: rgb(255, 255, 255);
-    --text-dark-color: rgb(95, 15, 100);
+    --text-dark-color: rgb(111, 18, 118);
     --main-bg-color:rgb(214, 214, 214);    
 }
 
@@ -16,7 +16,16 @@ body {
 
 header {
     background-color: var(--primary-theme-color);
-    color: var(--text-light-color);
+    color: var(--text-dark-color);
+}
+
+.header-box{
+  width:fit-content;
+  height:auto;
+  border: solid 1px var(--main-bg-color);
+  background-color: var(--main-bg-color);
+  box-shadow: 8px 8px rgb(140, 138, 138);
+  border-radius:10px;
 }
 
 nav {

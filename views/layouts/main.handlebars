@@ -31,8 +31,14 @@
             {{/if}}
         </nav>
 
-        <header class='p-2'>
-            <h1 class='mx-3'>The Tech Blog</h1>
+        <header class='p-3'>
+            <div class ="header-box">
+            {{#if title}}
+                <h1 class='mx-3'>{{title}}</h1>
+            {{else}}
+                <h1 class='mx-3'>The Tech Blog</h1>
+            {{/if}}
+            </div>
         </header>
 
         <main class='container-fluid'>
