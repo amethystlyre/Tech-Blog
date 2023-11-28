@@ -4,7 +4,7 @@
         <div class='post'>
             <div class='d-flex justify-content-between post-title p-2'>
                 <h3><a href="/post/{{post.id}}">{{post.title}}</a></h3>
-                <p>Posted by {{user.name}} on {{post.date_created}}</p>
+                <p>Posted by {{user.name}} on {{format_date post.date_created}}</p>
             </div>
             <p class='p-2'>{{post.content}}</p>
         </div>

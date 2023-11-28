@@ -1,84 +1,76 @@
 :root {
-  /* declare a variable with `--` syntax */
-  --bs-secondary-color: #13293d;
-
+    /* declare a variable with `--` syntax */
+    --primary-theme-color: rgb(118, 128, 201);
+    --secondary-theme-color: rgb(80, 78, 80);
+    --text-light-color: rgb(255, 255, 255);
+    --text-dark-color: rgb(95, 15, 100);
+    --main-bg-color:rgb(214, 214, 214);    
 }
 
-
 body {
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #d6d6d6;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d6d6d6;
 }
 
 header {
-  background-color: #1a2dc3;
-  color: #ffffff;
+    background-color: var(--primary-theme-color);
+    color: var(--text-light-color);
 }
 
 nav {
-  background-color: #444;
+    background-color: var(--secondary-theme-color);
 }
 
-.nav-link{
-  color: #fff;
+.nav-link {
+    color: var(--text-light-color);
 }
 
-p{
-  margin-top: 5px;
-  margin-bottom: 5px;
+p {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.post, .comment , .login, .new-post, .update-post{
-  background-color: #ffffff;
-  border: 5px solid #000000;
-  border-radius: 4px;
-} 
-.post-title, .comment-title, .login-title{
-  background-color: #333333;
-  color:#ffffff
-} 
+.post,
+.comment,
+.login,
+.new-post,
+.update-post,
+.signup {
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    border-radius: 4px;
+}
+.post-title,
+.comment-title,
+.login-title,
+.signup-title {
+    background-color: var(--secondary-theme-color);
+    color: var(--text-light-color);
+}
 .post-title a {
-  color:#ffffff;
-  text-decoration: none;
-} 
-
-
-/* form {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: var(--text-light-color);
+    text-decoration: none;
 }
 
-input,
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}  */
-
-.comments, .add-comment {
-  color:#1a2dc3;
+.comments,
+.add-comment {
+    color: var(--text-dark-color);
 }
 
-.post-list-item{
-  background-color: #1a2dc3;
-  color: #ffffff;
-  border-radius: 4px;
+.post-list-item {
+    background-color: var(--primary-theme-color);
+    color: var(--text-light-color);
+    border-radius: 4px;
 }
 
-.new-post, .update-post{
-  display: none;
-} 
+.new-post,
+.update-post {
+    display: none;
+}
 
 .post-list-item a {
-  color:#ffffff;
-  text-decoration: none;
-} 
+    color: var(--text-light-color);
+    text-decoration: none;
+}

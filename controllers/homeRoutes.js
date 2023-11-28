@@ -14,9 +14,7 @@ router.get('/', async (req, res) => {
             ],
         });
 
-        const posts = postData.map((post) =>
-            post.get({ plain: true })
-        );
+        const posts = postData.map((post) => post.get({ plain: true }));
         console.log(posts);
         res.render('homepage', {
             posts: posts,
@@ -29,8 +27,8 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
     try {
-        const commentData = await Comment.findAll({ 
-            where: { post_id: req.params.id},
+        const commentData = await Comment.findAll({
+            where: { post_id: req.params.id },
             include: [
                 {
                     model: User,
@@ -39,7 +37,7 @@ router.get('/post/:id', async (req, res) => {
             ],
         });
 
-        const postData = await Post.findByPk(req.params.id,{
+        const postData = await Post.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
@@ -53,10 +51,9 @@ router.get('/post/:id', async (req, res) => {
         console.log(post);
 
         const comments = commentData.map((comment) =>
-        comment.get({ plain: true }));
+            comment.get({ plain: true })
+        );
         console.log(comments);
-
- 
 
         res.render('comment', {
             comments: comments,
@@ -67,8 +64,6 @@ router.get('/post/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
@@ -82,13 +77,10 @@ router.get('/login', (req, res) => {
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const postData = await Post.findAll({
-            where: { user_id: req.session.user_id},
+            where: { user_id: req.session.user_id },
         });
 
-        const posts = postData.map((post) =>
-        post.get({ plain: true })
-    );
-
+        const posts = postData.map((post) => post.get({ plain: true }));
 
         res.render('dashboard', {
             posts,
@@ -100,4 +92,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/signup', async (req, res) => {
+    res.render('signup');
+});
+
 module.exports = router;
