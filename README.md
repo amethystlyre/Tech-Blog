@@ -13,7 +13,6 @@ A blog site where developers can publish their blog posts and comment on other d
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
 - [Tests](#tests)
-- [Questions](#questions)
     
 ## Installation
     
