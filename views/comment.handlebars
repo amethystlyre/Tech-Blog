@@ -37,7 +37,7 @@
                     id='comment'
                     name='comment'
                 ></textarea>
-                <button class='btn btn-primary mt-3' type='submit'>Add Comment</button>
+                <button class='btn btn-primary mt-3' type='submit' data-post-id="{{post.id}}">Add Comment</button>
             </form>
         {{else}}
             <p class="text-center"><a href='/login'>Login</a> to add your comment</p>
@@ -45,3 +45,6 @@
 
     </div>
 </div>
+
+
+<script src='../js/comment.js'></script>

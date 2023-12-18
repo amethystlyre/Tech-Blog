@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
         });
 
         const posts = postData.map((post) => post.get({ plain: true }));
-        console.log(posts);
+        //console.log(posts);
         res.render('homepage', {
             posts: posts,
             logged_in: req.session.logged_in,
@@ -50,12 +50,12 @@ router.get('/post/:id', async (req, res) => {
 
         const post = postData.get({ plain: true });
 
-        console.log(post);
+        //console.log(post);
 
         const comments = commentData.map((comment) =>
             comment.get({ plain: true })
         );
-        console.log(comments);
+        //console.log(comments);
 
         res.render('comment', {
             comments: comments,
