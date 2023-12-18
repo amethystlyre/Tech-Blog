@@ -5,9 +5,10 @@ const addCommentFormHandler = async (event) => {
     const comment = document.querySelector('#comment').value.trim();
     const postId = document.querySelector('button').dataset.postId;
 
-    console.log(comment);
-    console.log(postId);
+    //console.log(comment);
+    //console.log(postId);
 
+    //post comments to backend route
     if (comment) {
         const response = await fetch(`/api/comments/${postId}`, {
             method: 'POST',
